@@ -26,5 +26,9 @@
     "prettier": "^3.9.5",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^6.0.3"
+  },
+  "optionalDependencies": {
+    "@emnapi/core": "1.11.2",
+    "@emnapi/runtime": "1.11.2"
   }
 }
