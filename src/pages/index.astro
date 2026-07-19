@@ -16,7 +16,7 @@ const features = [
       'Your OpenTUI interface runs inside a resizable Tauri desktop window—not a browser-shaped imitation.',
   },
   {
-    glyph: '{ }',
+    glyph: '{}',
     token: 'config',
     title: 'One source of truth',
     description:
@@ -162,19 +162,21 @@ const year = new Date().getFullYear();
               <span class="window-title">termweave — native preview</span>
               <span class="window-live"><i aria-hidden="true"></i> live</span>
             </div>
-            <video
-              class="demo-video"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="/assets/termweave-demo-poster.jpg"
-              tabindex="-1"
-            >
-              <source src="/assets/termweave-demo.webm" type="video/webm" />
-              <source src="/assets/termweave-demo.mp4" type="video/mp4" />
-            </video>
+            <div class="demo-media">
+              <video
+                class="demo-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="/assets/termweave-demo-poster.jpg"
+                tabindex="-1"
+              >
+                <source src="/assets/termweave-demo.webm" type="video/webm" />
+                <source src="/assets/termweave-demo.mp4" type="video/mp4" />
+              </video>
+            </div>
             <div class="window-footer" aria-hidden="true">
               <span><i></i> source connected</span>
               <code>⌘ termweave</code>
@@ -267,7 +269,7 @@ const year = new Date().getFullYear();
 
         <div class="workflow-grid">
           {
-            workflow.map((step, index) => (
+            workflow.map((step) => (
               <article class="workflow-card">
                 <div class="workflow-card__top">
                   <span>{step.number}</span>
@@ -275,7 +277,6 @@ const year = new Date().getFullYear();
                 </div>
                 <div class="workflow-card__rail" aria-hidden="true">
                   <span />
-                  {index < workflow.length - 1 && <i>→</i>}
                 </div>
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
@@ -365,7 +366,7 @@ const year = new Date().getFullYear();
           </a>
         </div>
         <div class="closing-mark" aria-hidden="true">
-          <img src="/assets/termweave-weave-mark.png" width="512" height="512" alt="" />
+          <img src="/assets/termweave-weave-mark.png" width="auto" height="auto" alt="" />
         </div>
       </div>
     </section>
