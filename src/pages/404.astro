@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found — Termweave"
+  description="The requested Termweave page could not be found."
+  noindex
+>
+  <main id="main-content" class="not-found">
+    <div class="not-found__thread" aria-hidden="true"></div>
+    <a class="brand not-found__brand" href="/" aria-label="Termweave home">
+      <img
+        class="brand__mark"
+        src="/assets/termweave-weave-mark.png"
+        width="512"
+        height="512"
+        alt=""
+      />
+      <span class="brand__word">Termweave</span>
+    </a>
+    <div class="not-found__content">
+      <p class="eyebrow">Process exited with code 404</p>
+      <h1>This thread leads nowhere.</h1>
+      <p>The page moved, the path changed, or this command was never woven in.</p>
+      <a class="button button--primary" href="/">
+        Return home <span aria-hidden="true">→</span>
+      </a>
+    </div>
+    <code class="not-found__code">$ cd /termweave</code>
+  </main>
+</BaseLayout>

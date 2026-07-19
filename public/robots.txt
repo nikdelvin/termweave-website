@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://termweave.by.nikdelv.in/sitemap-index.xml

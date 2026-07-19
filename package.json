@@ -1,17 +1,30 @@
 {
-  "name": "curved-conjunction",
+  "name": "termweave-website",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "private": true,
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --background",
+    "dev:stop": "astro dev stop",
+    "dev:status": "astro dev status",
+    "dev:logs": "astro dev logs",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "astro check && prettier --check .",
+    "format": "prettier --write .",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.1.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "prettier": "^3.9.5",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^6.0.3"
   }
 }

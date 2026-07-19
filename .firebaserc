@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "hub-by-nikdelvin"
+  },
+  "targets": {
+    "hub-by-nikdelvin": {
+      "hosting": {
+        "termweave": ["termweave-by-nikdelvin"]
+      }
+    }
+  }
+}
