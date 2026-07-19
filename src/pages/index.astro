@@ -9,36 +9,42 @@ sh install.sh`;
 
 const features = [
   {
+    glyph: '⌘',
     token: 'window',
     title: 'A real native window',
     description:
       'Your OpenTUI interface runs inside a resizable Tauri desktop window—not a browser-shaped imitation.',
   },
   {
+    glyph: '{ }',
     token: 'config',
     title: 'One source of truth',
     description:
       'Set the name, colors, window size, bundle metadata, and icon in a single JSON config.',
   },
   {
+    glyph: '↻',
     token: 'reload',
     title: 'Keep your flow',
     description:
       'Edit your Solid interface and see source changes without restarting the native window.',
   },
   {
+    glyph: '>_',
     token: 'bundle',
     title: 'One-command bundles',
     description:
       'Turn the same project into a native bundle for the current machine with one build command.',
   },
   {
+    glyph: '◫',
     token: 'surface',
     title: 'A small project surface',
     description:
       'Own the interface and product details. Termweave manages the renderer, lifecycle, and packaging.',
   },
   {
+    glyph: 'MIT',
     token: 'open',
     title: 'Open by default',
     description:
@@ -101,24 +107,28 @@ const year = new Date().getFullYear();
 
   <main id="main-content">
     <section class="hero" id="top">
-      <div class="hero-thread hero-thread--one" aria-hidden="true"></div>
-      <div class="hero-thread hero-thread--two" aria-hidden="true"></div>
-      <div class="hero-thread hero-thread--three" aria-hidden="true"></div>
-      <div class="hero-thread hero-thread--four" aria-hidden="true"></div>
+      <div class="hero-mark" aria-hidden="true">
+        <img src="/assets/termweave-weave-mark.png" width="512" height="512" alt="" />
+      </div>
+      <div class="hero-loom" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
 
       <div class="container hero-inner">
         <div class="hero-copy">
           <p class="status-pill">
             <span class="status-dot" aria-hidden="true"></span>
-            Open source · Built for macOS
+            <span>Open source</span>
+            <i aria-hidden="true"></i>
+            <span>macOS today</span>
           </p>
           <h1>
-            <span class="hero-line hero-line--teal">Build terminal apps.</span>
-            <span class="hero-line hero-line--indigo">Ship them native.</span>
+            <span class="hero-line">Build terminal apps.</span>
+            <span class="hero-line hero-line--gradient">Ship them native.</span>
           </h1>
           <p class="hero-lede">
-            Termweave turns OpenTUI + Solid interfaces into native Tauri desktop apps. You build the
-            experience; Termweave handles the window, renderer, lifecycle, and packaging.
+            Turn an OpenTUI + Solid interface into a real Tauri desktop app—without rebuilding it
+            for the web first.
           </p>
 
           <div class="hero-actions">
@@ -132,49 +142,70 @@ const year = new Date().getFullYear();
             </a>
           </div>
 
-          <ul class="stack-list" aria-label="Built with">
-            <li><span aria-hidden="true">◆</span> OpenTUI</li>
-            <li><span aria-hidden="true">◆</span> Solid</li>
-            <li><span aria-hidden="true">◆</span> Tauri</li>
-          </ul>
+          <div class="hero-stack" aria-label="Termweave stack">
+            <span>OpenTUI</span><i aria-hidden="true">×</i><span>Solid</span><i aria-hidden="true"
+              >×</i
+            ><span>Tauri</span>
+          </div>
         </div>
 
-        <div class="demo-frame" aria-label="Termweave project demonstration">
-          <div class="window-bar">
-            <div class="window-dots" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
-            <span class="window-title">termweave — native preview</span>
-            <span class="window-live"><i aria-hidden="true"></i> live</span>
+        <div class="hero-stage">
+          <div class="stage-kicker" aria-hidden="true">
+            <span>01 / Native preview</span>
+            <span>Source → desktop</span>
           </div>
-          <video
-            class="demo-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="/assets/termweave-demo-poster.jpg"
-            tabindex="-1"
-          >
-            <source src="/assets/termweave-demo.webm" type="video/webm" />
-            <source src="/assets/termweave-demo.mp4" type="video/mp4" />
-          </video>
-          <div class="window-footer" aria-hidden="true">
-            <span><i></i> source connected</span>
-            <code>⌘ termweave</code>
+          <div class="demo-frame" aria-label="Termweave project demonstration">
+            <div class="window-bar">
+              <div class="window-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="window-title">termweave — native preview</span>
+              <span class="window-live"><i aria-hidden="true"></i> live</span>
+            </div>
+            <video
+              class="demo-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="/assets/termweave-demo-poster.jpg"
+              tabindex="-1"
+            >
+              <source src="/assets/termweave-demo.webm" type="video/webm" />
+              <source src="/assets/termweave-demo.mp4" type="video/mp4" />
+            </video>
+            <div class="window-footer" aria-hidden="true">
+              <span><i></i> source connected</span>
+              <code>⌘ termweave</code>
+            </div>
+          </div>
+          <div class="stage-chip stage-chip--config" aria-hidden="true">
+            <code>app.config.json</code>
+            <span>one source of truth</span>
+          </div>
+          <div class="stage-chip stage-chip--bundle" aria-hidden="true">
+            <span class="stage-chip__dot"></span>
+            <div><strong>Native bundle</strong><span>ready in build/</span></div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="stack-marquee" aria-label="Termweave positioning">
-      <div class="container stack-marquee__inner">
-        <span>Terminal-native UI</span>
-        <i aria-hidden="true"></i>
-        <span>Desktop distribution</span>
-        <i aria-hidden="true"></i>
-        <span>One focused toolchain</span>
+      <div class="stack-marquee__track">
+        <div class="stack-marquee__group">
+          <span>Terminal-native UI</span><i aria-hidden="true">✦</i>
+          <span>Desktop distribution</span><i aria-hidden="true">✦</i>
+          <span>Hot source reload</span><i aria-hidden="true">✦</i>
+          <span>One focused toolchain</span><i aria-hidden="true">✦</i>
+        </div>
+        <div class="stack-marquee__group" aria-hidden="true">
+          <span>Terminal-native UI</span><i>✦</i>
+          <span>Desktop distribution</span><i>✦</i>
+          <span>Hot source reload</span><i>✦</i>
+          <span>One focused toolchain</span><i>✦</i>
+        </div>
       </div>
     </section>
 
@@ -183,22 +214,25 @@ const year = new Date().getFullYear();
         <div class="section-heading">
           <div>
             <p class="eyebrow">Why Termweave</p>
-            <h2>The terminal is your interface.<br />The desktop is the delivery.</h2>
+            <h2>The terminal is already the interface.</h2>
           </div>
           <p>
-            Stop rebuilding terminal interactions with web-shaped primitives. Keep the
-            keyboard-first experience—and give it a native home.
+            Keep the keyboard-first experience. Termweave gives it a native window, a product
+            identity, and a path to distribution.
           </p>
         </div>
 
         <div class="feature-grid">
           {
             features.map((feature, index) => (
-              <article class="feature-card">
+              <article class={`feature-card feature-card--${index + 1}`}>
                 <div class="feature-card__meta">
+                  <span>{String(index + 1).padStart(2, '0')} / 06</span>
                   <code>{feature.token}</code>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
                 </div>
+                <span class="feature-card__glyph" aria-hidden="true">
+                  {feature.glyph}
+                </span>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
               </article>
@@ -213,7 +247,7 @@ const year = new Date().getFullYear();
         <div class="workflow-intro">
           <div>
             <p class="eyebrow">Three moves. One app.</p>
-            <h2>Own the product.<br />Let the toolchain disappear.</h2>
+            <h2>Your app in.<br />Native bundle out.</h2>
           </div>
           <div class="managed-list">
             <div>
@@ -233,11 +267,15 @@ const year = new Date().getFullYear();
 
         <div class="workflow-grid">
           {
-            workflow.map((step) => (
+            workflow.map((step, index) => (
               <article class="workflow-card">
                 <div class="workflow-card__top">
                   <span>{step.number}</span>
                   <p>{step.eyebrow}</p>
+                </div>
+                <div class="workflow-card__rail" aria-hidden="true">
+                  <span />
+                  {index < workflow.length - 1 && <i>→</i>}
                 </div>
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
@@ -250,54 +288,73 @@ const year = new Date().getFullYear();
     </section>
 
     <section class="section quick-start-section" id="quick-start">
+      <div class="quick-start-mark" aria-hidden="true">
+        <img src="/assets/termweave-weave-mark.png" width="512" height="512" alt="" />
+      </div>
       <div class="container quick-start">
-        <div class="quick-start__copy">
-          <p class="eyebrow">Quick start</p>
-          <h2>From empty folder<br />to native window.</h2>
-          <p>
-            Run the installer, answer a few project questions, and Termweave will create the starter
-            and install everything it manages.
-          </p>
-
-          <ul class="prerequisite-list" aria-label="Prerequisites">
-            {prerequisites.map((item) => <li>{item}</li>)}
-          </ul>
-
-          <aside class="platform-note">
-            <span aria-hidden="true">⌘</span>
-            <div>
-              <strong>Current platform status</strong>
-              <p>Installation, development, and native bundles currently target macOS.</p>
-            </div>
-          </aside>
+        <div class="quick-start__heading">
+          <div>
+            <p class="eyebrow">Quick start</p>
+            <h2>Four commands.<br />One native window.</h2>
+          </div>
+          <div class="quick-start__intro">
+            <p>
+              Run the installer, answer a few project questions, and Termweave will create the
+              starter and install everything it manages.
+            </p>
+            <ul class="prerequisite-list" aria-label="Prerequisites">
+              {prerequisites.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
         </div>
 
-        <div class="terminal-card">
+        <div class="terminal-card" data-command={installCommand}>
           <div class="terminal-card__bar">
-            <span>Install Termweave</span>
+            <div class="terminal-card__title">
+              <span class="terminal-card__traffic" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>Install Termweave</span>
+            </div>
             <button class="copy-button" type="button" data-copy-command>
               <span data-copy-label>Copy</span>
               <span aria-hidden="true">⌘C</span>
             </button>
           </div>
-          <pre><code id="install-command">{installCommand}</code></pre>
+          <pre
+            id="install-command"
+            aria-label="Termweave installation command"><code>
+            {
+              installCommand
+                .split('\n')
+                .map((line) => <span class="command-line">{line}</span>)
+            }
+          </code></pre>
           <div class="terminal-card__next">
-            <span>Then launch your app</span>
-            <code>bun run dev</code>
+            <span><i aria-hidden="true"></i> Ready for first launch</span>
+            <code>$ bun run dev</code>
           </div>
           <p class="sr-only" role="status" aria-live="polite" data-copy-status></p>
         </div>
+
+        <aside class="platform-note">
+          <span aria-hidden="true">⌘</span>
+          <div>
+            <strong>macOS is the current target</strong>
+            <p>Installation, development, and native bundles currently target macOS.</p>
+          </div>
+          <a href={githubUrl}>Follow platform work <span aria-hidden="true">↗</span></a>
+        </aside>
       </div>
     </section>
 
     <section class="closing-section">
       <div class="container closing-card">
-        <div class="closing-mark" aria-hidden="true">
-          <img src="/assets/termweave-weave-mark.png" width="112" height="112" alt="" />
-        </div>
-        <div>
+        <div class="closing-copy">
           <p class="eyebrow">Your terminal app belongs on the desktop.</p>
-          <h2>Build the thing only a terminal interface can be.</h2>
+          <h2>Stop shipping the terminal as an afterthought.</h2>
+          <p>
+            Build the focused, keyboard-first product only a terminal interface can be—and ship it
+            as a native app.
+          </p>
         </div>
         <div class="closing-actions">
           <a class="button button--primary" href={githubUrl}>
@@ -306,6 +363,9 @@ const year = new Date().getFullYear();
           <a class="text-link" href={`${githubUrl}/blob/main/CONTRIBUTING.md`}>
             Contributing guide <span aria-hidden="true">→</span>
           </a>
+        </div>
+        <div class="closing-mark" aria-hidden="true">
+          <img src="/assets/termweave-weave-mark.png" width="512" height="512" alt="" />
         </div>
       </div>
     </section>
@@ -329,7 +389,8 @@ const year = new Date().getFullYear();
     const copyButton = document.querySelector<HTMLButtonElement>('[data-copy-command]');
     const copyLabel = document.querySelector<HTMLElement>('[data-copy-label]');
     const copyStatus = document.querySelector<HTMLElement>('[data-copy-status]');
-    const command = document.querySelector<HTMLElement>('#install-command')?.textContent ?? '';
+    const terminalCard = document.querySelector<HTMLElement>('.terminal-card');
+    const command = terminalCard?.dataset.command ?? '';
 
     copyButton?.addEventListener('click', async () => {
       try {
